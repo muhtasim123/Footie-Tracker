@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PlayerActivity">
+
+    <TextView
+        android:id="@+id/labelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="75dp"
+        android:text="Player Statistics"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="178dp"
+        android:layout_height="136dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="117dp"
+        app:layout_constraintBottom_toTopOf="@+id/playerSpinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/labelTextView" />
+
+    <Spinner
+        android:id="@+id/playerSpinner"
+        android:layout_width="364dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:entries="@array/player_array"
+        android:prompt="@string/player_prompt"
+        app:layout_constraintBottom_toTopOf="@+id/homeBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <Button
+        android:id="@+id/homeBtn"
+        android:layout_width="154dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="18dp"
+        android:onClick="goHome"
+        android:text="Home"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout3"
+        app:layout_constraintEnd_toStartOf="@+id/submitPlayerBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playerSpinner" />
+
+    <Button
+        android:id="@+id/submitPlayerBtn"
+        android:layout_width="154dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="16dp"
+        android:onClick="submit"
+        android:text="Submit"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/homeBtn"
+        app:layout_constraintTop_toBottomOf="@+id/playerSpinner"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TableLayout
+        android:id="@+id/tableLayout3"
+        android:layout_width="408dp"
+        android:layout_height="308dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/homeBtn">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/labelNameTextView"
+                android:layout_width="144dp"
+                android:layout_height="31dp"
+                android:text="Player Name:"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/playerNameTextView"
+                android:layout_width="258dp"
+                android:layout_height="match_parent"
+                android:textSize="18sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/labelTeamTextView"
+                android:layout_width="144dp"
+                android:layout_height="31dp"
+                android:text="Team:"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/teamPlayedForTextView"
+                android:layout_width="258dp"
+                android:layout_height="match_parent"
+                android:textSize="18sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/labelPositionTextView"
+                android:layout_width="144dp"
+                android:layout_height="31dp"
+                android:text="Position:"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/positionTextView"
+                android:layout_width="258dp"
+                android:layout_height="match_parent"
+                android:textSize="18sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/labelAgeTextView"
+                android:layout_width="144dp"
+                android:layout_height="31dp"
+                android:text="Age:"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/ageTextView"
+                android:layout_width="258dp"
+                android:layout_height="match_parent"
+                android:textSize="18sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/labelNumberTextView"
+                android:layout_width="144dp"
+                android:layout_height="31dp"
+                android:text="Number:"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/numberTextView"
+                android:layout_width="258dp"
+                android:layout_height="match_parent"
+                android:textSize="18sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/labelNationalityTextView"
+                android:layout_width="144dp"
+                android:layout_height="31dp"
+                android:text="Nationality:"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/nationalityTextView"
+                android:layout_width="258dp"
+                android:layout_height="match_parent"
+                android:textSize="18sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/labelGoalsTextView"
+                android:layout_width="144dp"
+                android:layout_height="31dp"
+                android:text="Goals:"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/goalsTextView"
+                android:layout_width="258dp"
+                android:layout_height="match_parent"
+                android:textSize="18sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/labelAssistsTextView"
+                android:layout_width="144dp"
+                android:layout_height="31dp"
+                android:text="Assists:"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/assistsTextView"
+                android:layout_width="258dp"
+                android:layout_height="match_parent"
+                android:textSize="18sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/labelShotAccuracyTextView"
+                android:layout_width="144dp"
+                android:layout_height="31dp"
+                android:text="Shot Accuracy:"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/shotAccuracyTextView"
+                android:layout_width="258dp"
+                android:layout_height="match_parent"
+                android:textSize="18sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/labelPassAccuracyTextView"
+                android:layout_width="144dp"
+                android:layout_height="31dp"
+                android:text="Pass Accuracy:"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/passAccuracyTextView"
+                android:layout_width="258dp"
+                android:layout_height="match_parent"
+                android:textSize="18sp" />
+        </TableRow>
+
+    </TableLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

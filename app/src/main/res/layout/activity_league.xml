@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LeagueActivity">
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="66dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="67dp"
+        android:text="League Statistics"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@+id/leagueSpinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/leagueSpinner"
+        android:layout_width="403dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="7dp"
+        android:entries="@array/league_array"
+        android:prompt="@string/league_prompt"
+        app:layout_constraintBottom_toTopOf="@+id/leagueSubmitBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
+
+    <Button
+        android:id="@+id/homeBtn"
+        android:layout_width="135dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="105dp"
+        android:layout_marginBottom="26dp"
+        android:text="Home"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+        app:layout_constraintEnd_toStartOf="@+id/leagueSubmitBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/leagueSpinner"
+        android:onClick="goHome"/>
+
+    <Button
+        android:id="@+id/leagueSubmitBtn"
+        android:layout_width="135dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="26dp"
+        android:text="Submit"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/homeBtn"
+        app:layout_constraintTop_toBottomOf="@+id/leagueSpinner"
+        android:onClick="submit"/>
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="409dp"
+        android:layout_height="491dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/leagueSubmitBtn">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/positionTextView"
+                android:layout_width="63dp"
+                android:layout_height="match_parent"
+                android:text="Position" />
+
+            <TextView
+                android:id="@+id/teamNameTextView"
+                android:layout_width="155dp"
+                android:layout_height="match_parent"
+                android:text="Team Name" />
+
+            <TextView
+                android:id="@+id/pointsTextView"
+                android:layout_width="51dp"
+                android:layout_height="match_parent"
+                android:text="Points" />
+
+            <TextView
+                android:id="@+id/winsTextView"
+                android:layout_width="41dp"
+                android:layout_height="match_parent"
+                android:text="Wins" />
+
+            <TextView
+                android:id="@+id/lossesTextView"
+                android:layout_width="56dp"
+                android:layout_height="match_parent"
+                android:text="Losses" />
+
+            <TextView
+                android:id="@+id/drawsTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Draws" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/positionResultTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="471dp"
+                android:text="Position" />
+
+            <TextView
+                android:id="@+id/teamNameResultTextView"
+                android:layout_width="155dp"
+                android:layout_height="match_parent"
+                android:text="Team Name" />
+
+            <TextView
+                android:id="@+id/pointsResultTextView"
+                android:layout_width="51dp"
+                android:layout_height="match_parent"
+                android:text="Points" />
+
+            <TextView
+                android:id="@+id/winsResultTextView"
+                android:layout_width="41dp"
+                android:layout_height="match_parent"
+                android:text="Wins" />
+
+            <TextView
+                android:id="@+id/lossesResultTextView"
+                android:layout_width="56dp"
+                android:layout_height="match_parent"
+                android:text="Losses" />
+
+            <TextView
+                android:id="@+id/drawsResultsTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Draws" />
+        </TableRow>
+
+    </TableLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

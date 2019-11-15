@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">Footie Tracker</string>
+
+    <string name="league_prompt">Choose a League</string>
+
+    <string-array name="league_array">
+        <item>English Premier League</item>
+        <item>Spanish La Liga</item>
+        <item>German Bundesliga</item>
+        <item>French Ligue 1</item>
+        <item>Italian Serie A</item>
+    </string-array>
+
+    <string name="team_prompt">Choose a Team</string>
+
+    <string-array name="team_array">
+        <item>FC Barcelona</item>
+        <item>Real Madrid</item>
+        <item>Manchester City</item>
+        <item>Manchester United</item>
+        <item>Chelsea FC</item>
+        <item>Liverpool FC</item>
+        <item>Bayern Munich</item>
+        <item>Juventus</item>
+        <item>AC Milan</item>
+        <item>Inter Milan</item>
+        <item>Paris Saint Germain</item>
+        <item>AS Monaco</item>
+    </string-array>
+
+    <string name="player_prompt">Choose a Player</string>
+
+    <string-array name="player_array">
+        <item>Lionel Messi</item>
+        <item>Cristiano Ronaldo</item>
+        <item>Neymar Da Silva</item>
+    </string-array>
+</resources>

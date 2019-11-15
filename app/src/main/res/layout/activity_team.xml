@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TeamActivity">
+
+    <TextView
+        android:id="@+id/teamLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="79dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="79dp"
+        android:text="Team Statistics"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@+id/teamImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/teamSpinner"
+        android:layout_width="345dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="33dp"
+        android:layout_marginEnd="33dp"
+        app:layout_constraintBottom_toTopOf="@+id/homeBtn"
+        android:entries="@array/team_array"
+        android:prompt="@string/team_prompt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/teamImageView" />
+
+    <Button
+        android:id="@+id/homeBtn"
+        android:layout_width="154dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="37dp"
+        android:text="Home"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout2"
+        app:layout_constraintEnd_toStartOf="@+id/leagueSubmitBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/teamSpinner"
+        android:onClick="goHome"/>
+
+    <Button
+        android:id="@+id/leagueSubmitBtn"
+        android:layout_width="154dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="33dp"
+        android:text="Submit"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/homeBtn"
+        app:layout_constraintTop_toBottomOf="@+id/teamSpinner"
+        app:layout_constraintVertical_bias="0.0"
+        android:onClick="submit"/>
+
+    <TableLayout
+        android:id="@+id/tableLayout2"
+        android:layout_width="388dp"
+        android:layout_height="320dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/homeBtn">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/labelNameTextView"
+                android:layout_width="157dp"
+                android:layout_height="match_parent"
+                android:text="Team Name:"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/teamNameTextView"
+                android:layout_width="240dp"
+                android:layout_height="35dp"
+                android:textSize="24sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/labelTeamTextView"
+                android:layout_width="157dp"
+                android:layout_height="match_parent"
+                android:text="League:"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/leagueTextView"
+                android:layout_width="240dp"
+                android:layout_height="35dp"
+                android:textSize="24sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/labelPositionTextView"
+                android:layout_width="157dp"
+                android:layout_height="match_parent"
+                android:text="Matches:"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/matchesPlayedTextView"
+                android:layout_width="240dp"
+                android:layout_height="35dp"
+                android:textSize="24sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/label7TextView"
+                android:layout_width="157dp"
+                android:layout_height="match_parent"
+                android:text="Points:"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/pointsTextView"
+                android:layout_width="240dp"
+                android:layout_height="35dp"
+                android:textSize="24sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/label4TextView"
+                android:layout_width="157dp"
+                android:layout_height="match_parent"
+                android:text="Wins:"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/winsTextView"
+                android:layout_width="240dp"
+                android:layout_height="35dp"
+                android:textSize="24sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/label5TextView"
+                android:layout_width="157dp"
+                android:layout_height="match_parent"
+                android:text="Draws:"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/drawsTextView"
+                android:layout_width="240dp"
+                android:layout_height="35dp"
+                android:textSize="24sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/label6TextView"
+                android:layout_width="157dp"
+                android:layout_height="match_parent"
+                android:text="Losses:"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/lossesTextView"
+                android:layout_width="240dp"
+                android:layout_height="35dp"
+                android:textSize="24sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/label8TextView"
+                android:layout_width="157dp"
+                android:layout_height="match_parent"
+                android:text="Goals For:"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/goalsForTextView"
+                android:layout_width="240dp"
+                android:layout_height="35dp"
+                android:textSize="24sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/label9TextView"
+                android:layout_width="157dp"
+                android:layout_height="match_parent"
+                android:text="Goals Against:"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/goalsAgainstTextView"
+                android:layout_width="240dp"
+                android:layout_height="35dp"
+                android:textSize="24sp" />
+        </TableRow>
+    </TableLayout>
+
+    <ImageView
+        android:id="@+id/teamImageView"
+        android:layout_width="191dp"
+        android:layout_height="101dp"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="110dp"
+        app:layout_constraintBottom_toTopOf="@+id/teamSpinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/teamLabelTextView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

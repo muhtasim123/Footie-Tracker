@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="89dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="89dp"
+        android:text="Footie Tracker"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="77dp"
+        android:layout_marginTop="41dp"
+        android:layout_marginEnd="78dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleTextView"
+        app:srcCompat="@drawable/soccerball"
+        android:contentDescription="TODO" />
+
+    <Button
+        android:id="@+id/leagueBtn"
+        android:layout_width="195dp"
+        android:layout_height="78dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="57dp"
+        android:layout_marginEnd="108dp"
+        android:text="View League Stats"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        android:onClick="leagueButton"/>
+
+    <Button
+        android:id="@+id/teamBtn"
+        android:layout_width="195dp"
+        android:layout_height="78dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="108dp"
+        android:layout_marginBottom="20dp"
+        android:text="View Team Stats"
+        app:layout_constraintBottom_toTopOf="@+id/playerBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/leagueBtn"
+        android:onClick="teamButton"/>
+
+    <Button
+        android:id="@+id/playerBtn"
+        android:layout_width="195dp"
+        android:layout_height="78dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginEnd="108dp"
+        android:layout_marginBottom="37dp"
+        android:text="View Player Stats"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        android:onClick="playerButton"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
