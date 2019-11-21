@@ -62,9 +62,13 @@ public class PlayerActivity extends AppCompatActivity {
                 image.setImageResource(R.drawable.neymardasilva);
                 playerName.setText(name);
                 break;
-            case "French Ligue 1":
+            case "Kylian Mbappe":
+                image.setImageResource(R.drawable.kylianmbappe);
+                playerName.setText(name);
                 break;
-            case "Italian Serie A":
+            case "Frankie De Jong":
+                image.setImageResource(R.drawable.frankiedejong);
+                playerName.setText(name);
                 break;
             default:
                 throw new IllegalStateException("Unexpected value: " + name);

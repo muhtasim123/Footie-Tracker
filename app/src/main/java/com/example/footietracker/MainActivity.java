@@ -29,4 +29,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, PlayerActivity.class);
         startActivity(intent);
     }
+
+    public void favouriteButton(View v){
+        Intent intent = new Intent(this, FavouriteActivity.class);
+        startActivity(intent);
+    }
 }
