@@ -42,6 +42,12 @@ public class TeamActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+
+    public void favourite(View v){
+
+    }
+
+
     public void submit(View v){
         image.setImageResource(0);
         teamName.setText("");
