@@ -7,6 +7,8 @@ public class DatabaseReceiver {
     private String Draws;
     private String Losses;
 
+    public DatabaseReceiver(){};
+
     public DatabaseReceiver(String teamName, String league, String wins, String draws, String losses){
         this.TeamName = teamName;
         this.League = league;

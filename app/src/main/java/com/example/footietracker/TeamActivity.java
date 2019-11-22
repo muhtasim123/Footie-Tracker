@@ -2,6 +2,7 @@ package com.example.footietracker;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
@@ -18,6 +19,8 @@ public class TeamActivity extends AppCompatActivity {
     Spinner spinner;
     TextView teamName, league, matches, points, wins, losses, draws, goalsFor, goalsAgainst;
     ImageView image;
+    String name;
+    DatabaseHelper mySQLiteHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +38,8 @@ public class TeamActivity extends AppCompatActivity {
         draws = (TextView) findViewById(R.id.drawsTextView);
         goalsFor = (TextView) findViewById(R.id.goalsForTextView);
         goalsAgainst = (TextView) findViewById(R.id.goalsAgainstTextView);
+
+        mySQLiteHelper = new DatabaseHelper(this,null,null,1);
     }
 
     public void goHome(View v){
@@ -44,9 +49,18 @@ public class TeamActivity extends AppCompatActivity {
 
 
     public void favourite(View v){
-
+        Toast toast = Toast.makeText(getApplicationContext(), "Favourited!", Toast.LENGTH_SHORT);
+        toast.show();
+        String dName = teamName.getText().toString();
+        String dLeague = league.getText().toString();
+        String dWins = wins.getText().toString();
+        String dDraws = draws.getText().toString();
+        String dLosses = losses.getText().toString();
+        toast = Toast.makeText(getApplicationContext(), dName, Toast.LENGTH_SHORT);
+        toast.show();
+        DatabaseReceiver record = new DatabaseReceiver(dName, dLeague, dWins, dDraws, dLosses);
+        mySQLiteHelper.addRecord(record);
     }
-
 
     public void submit(View v){
         image.setImageResource(0);
@@ -60,7 +74,7 @@ public class TeamActivity extends AppCompatActivity {
         goalsFor.setText("");
         goalsAgainst.setText("");
 
-        String name = "";
+        name = "";
         if(spinner != null && spinner.getSelectedItem() !=null ) {
             name = (String)spinner.getSelectedItem();
         } else  {
@@ -75,6 +89,10 @@ public class TeamActivity extends AppCompatActivity {
             case "FC Barcelona":
                 image.setImageResource(R.drawable.barcelonalogo);
                 teamName.setText(name);
+                league.setText("Spanish La Liga");
+                wins.setText("38");
+                draws.setText("0");
+                losses.setText("0");
                 break;
             case "Real Madrid":
                 image.setImageResource(R.drawable.realmadridlogo);

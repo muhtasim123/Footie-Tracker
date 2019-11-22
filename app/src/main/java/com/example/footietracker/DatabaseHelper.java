@@ -6,6 +6,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.util.ArrayList;
+
 import androidx.annotation.Nullable;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
@@ -57,5 +59,44 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         return cursor;
 
+    }
+
+    ArrayList<String> getTeamNames()
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String tempName = "";
+        ArrayList<String> names = new ArrayList<>();
+        String query = "SELECT "+ COL_1 +" FROM "+TABLE_NAME;
+        //Assume no duplicate titles
+        Cursor c = db.rawQuery(query,null);
+        c.moveToFirst();
+        while(!(c.isAfterLast()))
+        {
+            tempName = c.getString(c.getColumnIndex(COL_1));
+            names.add(tempName);
+            c.moveToNext();
+        }
+        db.close();
+        return names;
+    }
+
+    DatabaseReceiver getName(String name)
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
+        DatabaseReceiver Tname = new DatabaseReceiver();
+        Cursor c = db.rawQuery("SELECT * FROM "+TABLE_NAME+" WHERE "+COL_1+" = ?",new String [] {name});
+        c.moveToFirst();
+        if(c.isNull(c.getColumnIndex(COL_1)))
+        {
+            db.close();
+            return null;
+        }
+        Tname.setTeamName(c.getString(c.getColumnIndex(COL_1)));
+        Tname.setLeague(c.getString(c.getColumnIndex(COL_2)));
+        Tname.setWins(c.getString(c.getColumnIndex(COL_3)));
+        Tname.setDraws(c.getString(c.getColumnIndex(COL_4)));
+        Tname.setLosses(c.getString(c.getColumnIndex(COL_5)));
+        db.close();
+        return Tname;
     }
 }
