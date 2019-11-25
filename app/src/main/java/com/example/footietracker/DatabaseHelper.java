@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import java.util.ArrayList;
 
@@ -48,6 +49,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(COL_3,databaseReceiver.getWins());
         values.put(COL_4,databaseReceiver.getDraws());
         values.put(COL_5,databaseReceiver.getLosses());
+
+        SQLiteDatabase db = getWritableDatabase();
+        db.insert(TABLE_NAME,null,values);
+        db.close();
     }
 
     public Cursor getAllRows(){
@@ -99,4 +104,5 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
         return Tname;
     }
+
 }
