@@ -9,6 +9,7 @@
         <item>German Bundesliga</item>
         <item>French Ligue 1</item>
         <item>Italian Serie A</item>
+        <item>API test item</item>
     </string-array>
 
     <string name="team_prompt">Choose a Team</string>
